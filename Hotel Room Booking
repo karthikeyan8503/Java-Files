@@ -1,0 +1,26 @@
+class Hotel {
+    private int totalRooms;
+    private int bookedRooms;
+    public Hotel(int totalRooms) {
+        this.totalRooms = totalRooms;
+        this.bookedRooms = 0;
+    }
+    public boolean bookRoom() {
+        if (bookedRooms < totalRooms) {
+            bookedRooms++;
+            return true;
+        }
+        return false;
+    }
+    public void cancelBooking() {
+        if (bookedRooms > 0) bookedRooms--;
+    }
+    public int getAvailableRooms() {
+        return totalRooms - bookedRooms;
+    }
+    public static void main(String[] args) {
+        Hotel h = new Hotel(5);
+        System.out.println("Booking room: " + h.bookRoom());
+        System.out.println("Available rooms: " + h.getAvailableRooms());
+    }
+}
