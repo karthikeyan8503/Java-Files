@@ -1,0 +1,27 @@
+class Student {
+    private String name;
+    private int[] scores;
+    public Student(String name, int[] scores) {
+        this.name = name;
+        this.scores = scores;
+    }
+    public int getTotal() {
+        int total = 0;
+        for (int s : scores) total += s;
+        return total;
+    }
+    public char getGrade() {
+        int avg = getTotal() / scores.length;
+        if (avg >= 90) return 'A';
+        else if (avg >= 80) return 'B';
+        else if (avg >= 70) return 'C';
+        else if (avg >= 60) return 'D';
+        else return 'F';
+    }
+}
+public class GradeCalculator {
+    public static void main(String[] args) {
+        Student s = new Student("John", new int[]{85, 90, 78});
+        System.out.println(s.name + " Grade: " + s.getGrade());
+    }
+}
