@@ -1,0 +1,14 @@
+public class VowelCount {
+    public static int countVowels(String s) {
+        int count = 0;
+        String vowels = "aeiouAEIOU";
+        for (char c : s.toCharArray()) {
+            if (vowels.indexOf(c) != -1) count++;
+        }
+        return count;
+    }
+    public static void main(String[] args) {
+        String input = "Hello World";
+        System.out.println("Number of vowels: " + countVowels(input));
+    }
+}
