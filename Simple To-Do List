@@ -1,0 +1,26 @@
+import java.util.ArrayList;
+import java.util.List;
+public class TodoList {
+    private List<String> tasks = new ArrayList<>();
+
+    public void addTask(String task) {
+        tasks.add(task);
+    }
+    public boolean removeTask(String task) {
+        return tasks.remove(task);
+    }
+    public void showTasks() {
+        System.out.println("Tasks:");
+        for (String t : tasks) {
+            System.out.println("- " + t);
+        }
+    }
+    public static void main(String[] args) {
+        TodoList todo = new TodoList();
+        todo.addTask("Buy groceries");
+        todo.addTask("Finish project");
+        todo.showTasks();
+        todo.removeTask("Buy groceries");
+        todo.showTasks();
+    }
+}
