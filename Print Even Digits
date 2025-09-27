@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class EvenDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt(); 
+        sc.close();
+        String numStr = String.valueOf(number); 
+        boolean found = false;                   
+        for (int i = 0; i < numStr.length(); i++) {
+            char ch = numStr.charAt(i);
+            int digit = ch - '0';               
+            if (digit % 2 == 0) {             
+                System.out.println(digit);
+                found = true;
+            }
+        }
+        if (!found) {                        
+            System.out.println(-1);
+        }
+    }
+}
