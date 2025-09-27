@@ -1,0 +1,21 @@
+class Employee {
+    String name;
+    double hourlyRate;
+    public Employee(String name, double hourlyRate) {
+        this.name = name;
+        this.hourlyRate = hourlyRate;
+    }
+    public double calculateSalary(int hoursWorked) {
+        if (hoursWorked <= 40) return hoursWorked * hourlyRate;
+        else {
+            int overtime = hoursWorked - 40;
+            return 40 * hourlyRate + overtime * hourlyRate * 1.5;
+        }
+    }
+}
+public class SalaryCalc {
+    public static void main(String[] args) {
+        Employee emp = new Employee("Alice", 20);
+        System.out.println("Salary: $" + emp.calculateSalary(45));
+    }
+}
