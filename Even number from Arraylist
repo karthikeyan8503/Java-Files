@@ -1,0 +1,21 @@
+import java.util.ArrayList;
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Integer> originalList = new ArrayList<>();
+        ArrayList<Integer> evenList = new ArrayList<>();
+        originalList.add(15);
+        originalList.add(22);
+        originalList.add(8);
+        originalList.add(37);
+        originalList.add(42);
+        originalList.add(11);
+        System.out.println("Original List: " + originalList);
+        for (int num : originalList) {
+            if (num % 2 == 0) { 
+                evenList.add(num); 
+            }
+        }
+        
+        System.out.println("Even Numbers List: " + evenList);
+    }
+}
